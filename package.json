@@ -1,0 +1,23 @@
+{
+  "name": "employee-crud-api",
+  "version": "1.0.0",
+  "description": "Aplicação CRUD API em nodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielaSant0s/employee-crud-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrielaSant0s/employee-crud-api/issues"
+  },
+  "homepage": "https://github.com/gabrielaSant0s/employee-crud-api#readme",
+  "devDependencies": {
+    "eslint": "^8.20.0"
+  }
+}
