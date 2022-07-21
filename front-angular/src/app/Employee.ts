@@ -1,7 +1,7 @@
 export default class Employee{
-  employeeName!: string
-  jobRole!: string
+  name!: string
+  job_role!: string
   salary!: number
-  dateBirthday!: Date
-  employeeRegistration!: number
+  date_birthday!: Date
+  employee_registration!: number
 }

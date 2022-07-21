@@ -3,18 +3,13 @@
     <form [formGroup]="employeeForm" novalidate>
       <div class="form-group">
         <label for="employee-name" class="col-md-4">Employee Name</label>
-        <input
-          type="text"
-          class="form-control"
-          formControlName="employeeName"
-          #employeeName
-        />
+        <input type="text" class="form-control" formControlName="name" #name />
       </div>
       <div
         *ngIf="
-          employeeForm.controls['employeeName'].invalid &&
-          (employeeForm.controls['employeeName'].dirty ||
-            employeeForm.controls['employeeName'].touched)
+          employeeForm.controls['name'].invalid &&
+          (employeeForm.controls['name'].dirty ||
+            employeeForm.controls['name'].touched)
         "
         class="alert alert-danger"
       >
@@ -25,15 +20,15 @@
         <input
           type="text"
           class="form-control"
-          formControlName="jobRole"
-          #jobRole
+          formControlName="job_role"
+          #job_role
         />
       </div>
       <div
         *ngIf="
-          employeeForm.controls['jobRole'].invalid &&
-          (employeeForm.controls['jobRole'].dirty ||
-            employeeForm.controls['jobRole'].touched)
+          employeeForm.controls['job_role'].invalid &&
+          (employeeForm.controls['job_role'].dirty ||
+            employeeForm.controls['job_role'].touched)
         "
         class="alert alert-danger"
       >
@@ -64,15 +59,15 @@
           type="date"
           class="form-control"
           placeholder="YYYY-MM-DD"
-          formControlName="dateBirthday"
-          #dateBirthday
+          formControlName="date_birthday"
+          #date_birthday
         />
       </div>
       <div
         *ngIf="
-          employeeForm.controls['dateBirthday'].invalid &&
-          (employeeForm.controls['dateBirthday'].dirty ||
-            employeeForm.controls['dateBirthday'].touched)
+          employeeForm.controls['date_birthday'].invalid &&
+          (employeeForm.controls['date_birthday'].dirty ||
+            employeeForm.controls['date_birthday'].touched)
         "
         class="alert alert-danger"
       >
@@ -85,19 +80,37 @@
         <input
           type="text"
           class="form-control"
-          formControlName="employeeRegistration"
-          #employeeRegistration
+          formControlName="employee_registration"
+          #employee_registration
         />
       </div>
       <div
         *ngIf="
-          employeeForm.controls['employeeRegistration'].invalid &&
-          (employeeForm.controls['employeeRegistration'].dirty ||
-            employeeForm.controls['employeeRegistration'].touched)
+          employeeForm.controls['employee_registration'].invalid &&
+          (employeeForm.controls['employee_registration'].dirty ||
+            employeeForm.controls['employee_registration'].touched)
         "
         class="alert alert-danger"
       >
         The field 'Employee Registration' is required.
+      </div>
+      <div class="form-group">
+        <button
+          class="btn btn-primary"
+          (click)="
+            createNewEmployee(
+              name.value,
+              job_role.value,
+              salary.value,
+              date_birthday.value,
+              employee_registration.value
+            )
+          "
+          [disabled]="employeeForm.pristine || employeeForm.invalid"
+        >
+          Add new employee
+          <!-- <fa-icon [icon]="['fas', 'user-plus']">Employee</fa-icon> -->
+        </button>
       </div>
     </form>
   </div>
