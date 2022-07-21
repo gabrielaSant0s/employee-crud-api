@@ -25,4 +25,16 @@ export class EmployeesService {
       .subscribe(res => console.log("Feito"))
 
   }
+
+  getEmployees(){
+    return this
+      .http
+      .get(`${this.uri}/employees`);
+  }
+
+  // deleteEmployee(employee_id:any){
+  //   return this
+  //     .http
+  //     .delete(`${this.uri}/employees/:${employee_id}`)
+  // }
 }
